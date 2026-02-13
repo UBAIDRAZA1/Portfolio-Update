@@ -7,7 +7,7 @@ async function sendEmail(name: string, email: string, message: string) {
     const { Resend } = resendModule;
     const resend = new Resend(process.env.RESEND_API_KEY);
 
-    const data = await resend.emails.send({
+    const { data, error } = await resend.emails.send({
       from: process.env.EMAIL_FROM || 'onboarding@resend.dev',
       to: process.env.PERSONAL_EMAIL || 'ubaidraza3657767@gmail.com',
       subject: `New Contact from ${name}`,
@@ -19,7 +19,11 @@ async function sendEmail(name: string, email: string, message: string) {
       `,
     });
 
-    return { success: true, id: data.id };
+    if (error) {
+      return { success: false, error: error.message };
+    }
+
+    return { success: true, id: data?.id };
   } catch (error: any) {
     console.error('Error sending email:', error);
     return { success: false, error: error.message };

@@ -125,11 +125,14 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
                 backgroundColor: "rgba(0, 255, 255, 0.2)",
                 boxShadow: "0 0 10px rgba(0, 255, 255, 0.5)"
               }}
-              transition={{ type: "spring", stiffness: 300 }}
+              transition={{ 
+                type: "spring", 
+                stiffness: 300,
+                delay: 0.2 + techIndex * 0.05 
+              }}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.2 + techIndex * 0.05 }}
             >
               {tech}
             </motion.span>
