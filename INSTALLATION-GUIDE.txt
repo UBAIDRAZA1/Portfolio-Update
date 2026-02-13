@@ -1,0 +1,40 @@
+# Installation Guide for Portfolio Dependencies
+
+## Method 1: Using Command Prompt
+1. Open Command Prompt as Administrator
+2. Navigate to your project directory:
+   ```cmd
+   cd "C:\Users\Administrator\Desktop\Portfolio\ubaid-raza-portfolio"
+   ```
+3. Run the following command:
+   ```cmd
+   npm install resend
+   ```
+
+## Method 2: Using PowerShell
+1. Open PowerShell as Administrator
+2. Navigate to your project directory:
+   ```powershell
+   cd "C:\Users\Administrator\Desktop\Portfolio\ubaid-raza-portfolio"
+   ```
+3. Run the following command:
+   ```powershell
+   npm install resend
+   ```
+
+## Method 3: If you're still getting errors
+Try installing with legacy peer deps:
+```cmd
+npm install resend --legacy-peer-deps
+```
+
+## After Installation
+Once the installation is successful, you can run your portfolio with:
+```cmd
+npm run dev
+```
+
+## Important Notes
+- Make sure you have Node.js installed on your system
+- Ensure you have internet connection during installation
+- If you get permission errors, try running the command prompt as administrator
