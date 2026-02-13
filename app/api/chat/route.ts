@@ -1,5 +1,5 @@
 // app/api/chat/route.ts
-import { StreamingTextResponse, Message, streamText } from 'ai';
+import { StreamingTextResponse, Message } from 'ai';
 import { NextRequest } from 'next/server';
 
 // Define the client information as constants
